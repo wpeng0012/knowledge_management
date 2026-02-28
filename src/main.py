@@ -17,10 +17,10 @@ app = FastAPI(
 # 添加CORS中间件
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 生产环境应该指定具体的域名
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=["*"],  #  # 允许所有域名访问（生产环境必须改成具体域名，比如["https://yourdomain.com"]）
+    allow_credentials=True,# 允许前端携带cookie等凭证信息
+    allow_methods=["*"],# 允许所有HTTP方法（GET/POST/PUT/DELETE等）
+    allow_headers=["*"], # 允许所有请求头（比如自定义的Token头、Content-Type等）
 )
 
 @app.get("/")
@@ -42,3 +42,6 @@ def health_check():
 # 4. 启动数据库连接
 # 5. 配置异常处理
 # 6. 启动应用服务器
+
+# uvicorn src.main:app --reload
+
