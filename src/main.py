@@ -45,3 +45,36 @@ def health_check():
 
 # uvicorn src.main:app --reload
 
+# knowledge_management/
+# ├── .idea/                  # PyCharm 项目配置
+# ├── .venv/                  # 项目虚拟环境
+# ├── src/                    # 核心源代码
+# │   ├── api/                # API 路由层
+# │   │   └── v1/             # v1 版本接口
+# │   │       └── __init__.py # 路由导出
+# │   ├── core/               # 核心配置与数据库连接
+# │   │   ├── __init__.py
+# │   │   ├── config.py       # 全局配置（环境变量、密钥等）
+# │   │   └── database.py     # SQLAlchemy 引擎与会话管理
+# │   ├── crud/               # 数据库操作层
+# │   │   ├── __init__.py
+# │   │   └── knowledge.py    # 知识条目 CRUD 操作
+# │   ├── models/             # 数据库 ORM 模型
+# │   │   ├── __init__.pygit s
+# │   │   ├── task.py         # 任务表模型
+# │   │   └── user.py         # 用户表模型
+# │   ├── schemas/            # Pydantic 数据验证模型
+# │   │   ├── __init__.py
+# │   │   ├── api_config.py   # API 通用配置（分页、响应格式）
+# │   │   └── knowledge.py    # 知识条目请求/响应模型
+# │   ├── services/           # 业务逻辑层
+# │   │   └── __init__.py     # 业务逻辑封装（如用户登录、知识创建）
+# │   ├── utils/              # 通用工具层
+# │   │   └── __init__.py     # 工具函数（密码加密、JWT、时间处理等）
+# │   ├── __init__.py
+# │   └── main.py             # FastAPI 应用入口
+# ├── tests/                  # 测试用例
+# │   └── __init__.py
+# ├── .env                    # 环境变量（数据库 URL、密钥等）
+# ├── requirements.txt        # 项目依赖
+# └── README.md               # 项目说明文档
